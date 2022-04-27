@@ -39,10 +39,8 @@ const twitterAuthToken = (oauth_token, oauth_token_secret) => {
   const oauth_nonce = uuidv4();
   const oauth_signature_method = "HMAC-SHA1";
   const oauth_version = "1.0";
-  const oauth_consumer_key = "J0c8PzEdjiI9pfNb1LGdXliT9";
-  //   const oauth_consumer_secret =
-  //     "5JsahDp5MDfI42Z5Wjg3frLqG5MQIm4ogRAaqUvKjWI9GvcJOD";
-
+  const oauth_consumer_key = process.env.CONSUMER_KEY;
+  
   let parameters = {
     oauth_consumer_key: oauth_consumer_key,
     oauth_signature_method: oauth_signature_method,
@@ -93,10 +91,7 @@ const twitterAuthToken = (oauth_token, oauth_token_secret) => {
   console.log({ header });
 };
 
-// twitter(
-//   "1450451619582251013-H43rslxRw67dSvnIZpHujsAOLHo1Ih",
-//   "EcOrEeoidmwcu5encKy2G1LZzBhJ506336DBz6wum1ZIp"
-// );
+
 
 module.exports = {
   Oauth1Helper,
